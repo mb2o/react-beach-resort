@@ -7,11 +7,12 @@ import Rooms from './pages/Rooms';
 import Single from './pages/Single';
 
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Fragment>
-      {/* Navbar goes here */}
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms" component={Rooms} />
