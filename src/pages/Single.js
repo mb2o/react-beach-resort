@@ -4,6 +4,7 @@ import defaultBcg from '../images/room-1.jpeg';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import { RoomContext } from '../context';
+import StyledHero from '../components/StyledHero';
 
 export default class Single extends Component {
   constructor(props) {
@@ -46,13 +47,13 @@ export default class Single extends Component {
 
     return (
       <Fragment>
-        <Hero hero="roomsHero">
+        <StyledHero img={images[0]}>
           <Banner title={`${name} room`}>
             <Link to="/rooms" className="btn-primary">
               Back to rooms
             </Link>
           </Banner>
-        </Hero>
+        </StyledHero>
       </Fragment>
     );
   }
