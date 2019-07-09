@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import defaultBcg from '../images/room-1.jpeg';
 import Hero from '../components/Hero';
@@ -20,12 +20,40 @@ export default class Single extends Component {
   render() {
     const { getRoom } = this.context;
     const room = getRoom(this.state.slug);
-    console.log(room);
+
+    if (!room) {
+      return (
+        <div className="error">
+          <h3>No such room could be found</h3>
+          <Link to="/rooms" className="btn-primary">
+            Back to Rooms
+          </Link>
+        </div>
+      );
+    }
+
+    const {
+      name,
+      description,
+      capacity,
+      size,
+      price,
+      extras,
+      breakfast,
+      pets,
+      images
+    } = room;
 
     return (
-      <div>
-        <h2>Singe Room Page</h2>
-      </div>
+      <Fragment>
+        <Hero hero="roomsHero">
+          <Banner title={`${name} room`}>
+            <Link to="/rooms" className="btn-primary">
+              Back to rooms
+            </Link>
+          </Banner>
+        </Hero>
+      </Fragment>
     );
   }
 }
