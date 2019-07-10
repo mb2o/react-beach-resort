@@ -55,6 +55,7 @@ export default class Single extends Component {
             </Link>
           </Banner>
         </StyledHero>
+
         <section className="single-room">
           <div className="single-room-images">
             {roomImgs.map((image, index) => (
@@ -66,6 +67,7 @@ export default class Single extends Component {
               <h3>details</h3>
               <p>{description}</p>
             </article>
+
             <article className="info">
               <h3>info</h3>
               <h6>price: ${price}</h6>
@@ -79,6 +81,7 @@ export default class Single extends Component {
             </article>
           </div>
         </section>
+
         <section className="room-extras">
           <h6>extras</h6>
           <ul className="extras">
