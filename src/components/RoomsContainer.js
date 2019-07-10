@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Loading from '../components/Loading';
 import RoomFilter from './RoomFilter';
 import RoomList from './RoomList';
@@ -12,10 +12,10 @@ function RoomsContainer({ context }) {
   }
 
   return (
-    <div>
+    <Fragment>
       <RoomFilter rooms={rooms} />
       <RoomList rooms={sortedRooms} />
-    </div>
+    </Fragment>
   );
 }
 
